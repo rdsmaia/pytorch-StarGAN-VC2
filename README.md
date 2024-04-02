@@ -2,9 +2,9 @@
 
 This is a PyTorch implementation of the paper: [StarGAN-VC2: Rethinking Conditional Methods for StarGAN-Based Voice Conversion](https://arxiv.org/abs/1907.12279). 
 
-Support [VCC2016](http://www.vc-challenge.org/vcc2016/index.html) and [VCC2018](http://www.vc-challenge.org/vcc2018/index.html) two datasets.
+Support [VCC2016](http://www.vc-challenge.org/vcc2016/index.html) , [VCC2018](http://www.vc-challenge.org/vcc2018/index.html) , [CETUC](http://www02.smt.ufrj.br/~igor.quintanilha/alcaim.tar.gz) three datasets.
 
-**\*\*Under construction\*\***
+Many thanks for Oscar Hsu (https://github.com/Oscarshu0719) for providing the original repo!
 
 ## Dependencies
 - Python 3.6+
@@ -16,12 +16,11 @@ Support [VCC2016](http://www.vc-challenge.org/vcc2016/index.html) and [VCC2018](
 
 ## Test environment
 - Ubuntu 18.04 LTS
-- Intel i7-9700KF
-- Nvidia RTX 2070 Super
-- 32 GB RAM
-- python 3.7.7
-- pytorch 1.4.0
-- cudnn 7.6.5
+- Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+- NVIDIA TITAN V
+- 12 GB RAM
+- python 3.7
+- pytorch 1.8.0
 - scikit-learn 0.22.1
 - librosa 0.6.1
 - pyworld 0.2.8
@@ -31,19 +30,19 @@ Support [VCC2016](http://www.vc-challenge.org/vcc2016/index.html) and [VCC2018](
 
 ### Download dataset
 
-#### Download the vcc 2016 dataset to `./data`.
+#### Download the CETUC dataset to `./data`.
 
 ``` 
 python download.py [--dataset dataset]
 
 dataset: 
     Downloaded dataset. 
-    Available datasets: VCC2016, VCC2018.
-    e.g. Download dataset VCC2016.
-        VCC2016
+    Available datasets: VCC2016, VCC2018, CETUC.
+    e.g. Download dataset CETUC.
+        CETUC
 
-e.g. Download dataset VCC2016.
-    python download.py --dataset VCC2016.
+e.g. Download dataset CETUC.
+    python download.py --dataset CETUC.
 
 Notice:
     Details of other arguments are in `download.py`.
@@ -104,12 +103,12 @@ python [-W ignore] preprocess.py [--dataset dataset]
 
 dataset:
     Used dataset. Main reason is to determine sample rate.
-    Available datasets: VCC2016, VCC2018.
-    e.g. Use dataset VCC2016.
-        VCC2016
+    Available datasets: VCC2016, VCC2018, CETUC.
+    e.g. Use dataset CETUC.
+        CETUC
 
-e.g. Use dataset VCC2016 and ignore warnings.
-    python -W ignore preprocess.py --dataset VCC2016
+e.g. Use dataset CETUC and ignore warnings.
+    python -W ignore preprocess.py --dataset CETUC
 
 Notice:
     Details of other arguments are in `preprocess.py`.
@@ -122,18 +121,18 @@ python main.py [--dataset dataset]
 
 dataset:
     Used dataset. Main reason is to determine sample rate.
-    Available datasets: VCC2016, VCC2018.
-    e.g. Use dataset VCC2016.
-        VCC2016
+    Available datasets: VCC2016, VCC2018, CETUC.
+    e.g. Use dataset CETUC.
+        CETUC
 
-e.g. Use dataset VCC2016 and train.
-    python main.py --dataset VCC2016
+e.g. Use dataset CETUC and train.
+    python main.py --dataset CETUC
 
 Notice:
     Details of other arguments are in `main.py`.
 ```
 
-### Convert
+### Convert (**** under construction for CETUC dataset ****)
 
 ```
 python main.py --mode convert [--src_speaker src_speaker] [--trg_speaker trg_speaker_list] [--test_iters test_iters] [--dataset dataset]
@@ -172,6 +171,8 @@ Then open `http://localhost:6006/` in browser.
 ## References
 
 ### Code
+
+[pytorch-StarGAN-VC](https://github.com/Oscarshu0719/pytorch-StarGAN-VC2) by [Oscarshu0719](https://github.com/Oscarshu0719).
 
 [pytorch-StarGAN-VC](https://github.com/hujinsen/pytorch-StarGAN-VC) by [hujinshen](https://github.com/hujinsen).
 
