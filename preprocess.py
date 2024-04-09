@@ -108,10 +108,10 @@ if __name__ == "__main__":
     input_dir = './data/spk'
     output_dir = './data/processed'
 
-    dataset_default = 'VCC2016'
+    dataset_default = 'CETUC'
 
-    parser.add_argument('--dataset', type=str, default=dataset_default, choices=['VCC2016', 'VCC2018'], 
-        help='Available datasets: VCC2016 and VCC2018 (Default: VCC2016).')
+    parser.add_argument('--dataset', type=str, default=dataset_default, choices=['VCC2016', 'VCC2018', 'CETUC'], 
+        help='Available datasets: VCC2016, VCC2018 and CETUC (Default: CETUC).')
     parser.add_argument('--input_dir', type=str, default=input_dir, help='Directory of input data.')
     parser.add_argument('--output_dir', type=str, default=output_dir, help='Directory of processed data.')
     

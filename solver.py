@@ -1,6 +1,7 @@
 import ast
 from datetime import datetime, timedelta
 import librosa
+import soundfile as sf
 import numpy as np
 import os
 import random
@@ -317,7 +318,8 @@ class Solver(object):
                         name = f'{speaker}-{target}_iter{i + 1}_{filename}'
                         path = os.path.join(self.sample_dir, name)
                         print(f'[SAVE]: {path}')
-                        librosa.output.write_wav(path, wav, self.sample_rate)
+#                        librosa.output.write_wav(path, wav, self.sample_rate)
+                        sf.write(path, wav, self.sample_rate)
                         
             # Save model checkpoints.
             if (i + 1) % self.model_save_step == 0:
@@ -420,4 +422,5 @@ class Solver(object):
                     name = f'{speaker}-{target}_iter{self.test_iters}_{filename}'
                     path = os.path.join(self.result_dir, name)
                     print(f'[SAVE]: {path}')
-                    librosa.output.write_wav(path, wav, self.sample_rate)            
+#                    librosa.output.write_wav(path, wav, self.sample_rate)            
+                    sf.write(path, wav, self.sample_rate)            

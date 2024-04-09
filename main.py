@@ -34,11 +34,11 @@ def main(config):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    dataset_default = 'VCC2016'
+    dataset_default = 'CETUC'
 
     parser.add_argument('--num_spk', type=float, default=4, help='Number of speakers.')
-    parser.add_argument('--dataset', type=str, default=dataset_default, choices=['VCC2016', 'VCC2018'], 
-        help='Available datasets: VCC2016 and VCC2018 (Default: VCC2016).')
+    parser.add_argument('--dataset', type=str, default=dataset_default, choices=['VCC2016', 'VCC2018', 'CETUC'], 
+        help='Available datasets: VCC2016, VCC2018 and CETUC (Default: CETUC).')
     
     parser.add_argument('--lambda_cyc', type=float, default=10, help='Weight of cycle loss.')
     parser.add_argument('--lambda_gp', type=float, default=5, help='Weight of gradient penalty.')
